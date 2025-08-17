@@ -36,7 +36,6 @@ public class TutorsProfile extends JFrame {
             new ImageIcon(getClass().getResource("/img/profile_icon.jpg")).getImage()
               .getScaledInstance(100, 100, Image.SCALE_SMOOTH)));
             profilePic.setAlignmentX(Component.CENTER_ALIGNMENT);
-           // profilePic.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
             profilePic.setOpaque(true);
             profilePic.setBackground(Color.LIGHT_GRAY);
 
@@ -70,7 +69,7 @@ public class TutorsProfile extends JFrame {
             }
 
             if (hasHalfStar) {
-                ratingStars.append("⯨"); 
+                ratingStars.append("⭐"); 
             }
 
          
@@ -79,16 +78,18 @@ public class TutorsProfile extends JFrame {
                 ratingStars.append("☆");
             }
 
-            JLabel rate = new JLabel("Rating: " + ratingStars.toString() + " (" + ratings[i] + "/5)");
+           JLabel rate = new JLabel("Rating: " + ratingStars.toString() + " (" + ratings[i] + "/5)");
             rate.setFont(new Font("Arial", Font.PLAIN, 16));
-            rate.setForeground(new Color(255, 140, 0)); // Orange color for rating
+            rate.setForeground(new Color(255 , 193 , 7)); 
             rate.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+
 
             final int index = i;
             JButton bookButton = new JButton("Book Session");
             bookButton.setFont(new Font("Arial", Font.BOLD, 16));
-            bookButton.setBackground(new Color(173, 216, 230)); // Light blue
-            bookButton.setForeground(Color.WHITE);
+            bookButton.setBackground(new Color(173, 216, 230)); 
+            bookButton.setForeground(Color.BLACK);
             bookButton.setFocusPainted(false);
             bookButton.setAlignmentX(Component.CENTER_ALIGNMENT);
             bookButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -103,10 +104,9 @@ public class TutorsProfile extends JFrame {
             });
 
             bookButton.addActionListener(e -> JOptionPane.showMessageDialog(this, "Session booked with " + names[index]));
-
-            JButton prepButton = new JButton("Exam Prep Tips");
+            JButton prepButton = new JButton("Exam Preparation");
             prepButton.setFont(new Font("Arial", Font.BOLD, 16));
-            prepButton.setBackground(new Color(230, 230, 250)); 
+            prepButton.setBackground(new Color(173, 216, 230)); 
             prepButton.setForeground(Color.BLACK);
             prepButton.setFocusPainted(false);
             prepButton.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -114,12 +114,14 @@ public class TutorsProfile extends JFrame {
 
             prepButton.addMouseListener(new java.awt.event.MouseAdapter() {
                 public void mouseEntered(java.awt.event.MouseEvent evt) {
-                    prepButton.setBackground(new Color(221, 160, 221)); 
+                    prepButton.setBackground(new Color(135, 206, 235));
                 }
                 public void mouseExited(java.awt.event.MouseEvent evt) {
-                    prepButton.setBackground(new Color(230, 230, 250)); 
+                    prepButton.setBackground(new Color(173, 216, 230)); 
                 }
             });
+            
+            
 
             prepButton.addActionListener(e -> JOptionPane.showMessageDialog(this,
                     "- Study consistently\n- Practice past papers\n- Manage time well\n- Review complex topics\n- Stay organized"));
